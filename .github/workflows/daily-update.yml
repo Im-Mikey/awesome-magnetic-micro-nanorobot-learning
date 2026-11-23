@@ -1,0 +1,74 @@
+name: Daily paper update
+
+# Every day this searches arXiv, OpenAlex, Crossref, PubMed and Semantic Scholar for new papers.
+# It judges them, adds them to README.md (or to NEW_PAPERS.md for review) and pushes the result.
+# It costs nothing: Actions minutes are free for public repositories and every source is free.
+# For setup (all optional) and options, see "Daily updates" in CONTRIBUTING.md.
+
+on:
+  schedule:
+    - cron: "17 23 * * *" # 23:17 UTC every day
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back to search"
+        required: false
+        default: "10"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-paper-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DAYS: ${{ github.event.inputs.days || '10' }}
+      OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+      LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+      LLM_MODEL: ${{ vars.LLM_MODEL }}
+      S2_API_KEY: ${{ secrets.S2_API_KEY }}
+      NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+      CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Find, judge and add new papers
+        run: >-
+          python3 scripts/daily_update.py run --days "$DAYS"
+          --summary "$RUNNER_TEMP/summary.md" --commit-msg "$RUNNER_TEMP/commit.txt"
+
+      - name: Check, commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2; do
+            python3 scripts/daily_update.py check  # stops here if README.md would be left inconsistent
+            git add -A
+            if git diff --cached --quiet; then
+              echo "Nothing new today."
+              exit 0
+            fi
+            git commit -q -F "$RUNNER_TEMP/commit.txt"
+            if git push; then
+              exit 0
+            fi
+            if [ "$attempt" = 2 ]; then
+              exit 1
+            fi
+            # main moved during the run (for example a merged pull request): redo the update on top of it
+            echo "Push rejected; running the update again on the latest main."
+            git fetch origin "$GITHUB_REF_NAME"
+            git reset --hard "origin/$GITHUB_REF_NAME"
+            python3 scripts/daily_update.py run --days "$DAYS" \
+              --summary "$RUNNER_TEMP/summary.md" --commit-msg "$RUNNER_TEMP/commit.txt"
+          done
+
+      - name: Show the report on the run page
+        if: always()
+        run: cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true

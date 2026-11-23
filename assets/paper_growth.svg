@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="300" viewBox="0 0 720 300" role="img" aria-label="Papers in the list per publication year, core versus related">
+<rect width="720" height="300" rx="8" fill="#fcfcfb"/>
+<text x="44" y="26" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#0b0b0b">Papers in this list by publication year</text>
+<rect x="44" y="38" width="10" height="10" rx="2" fill="#2a78d6"/>
+<text x="60" y="47" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#52514e">Magnetic micro/nanorobot learning (142)</text>
+<rect x="319.8" y="38" width="10" height="10" rx="2" fill="#eb6834"/>
+<text x="335.8" y="47" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#52514e">Related work (72)</text>
+<text x="36" y="268.0" text-anchor="end" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">0</text>
+<line x1="44" y1="214.0" x2="704" y2="214.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="36" y="218.0" text-anchor="end" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">20</text>
+<line x1="44" y1="164.0" x2="704" y2="164.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="36" y="168.0" text-anchor="end" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">40</text>
+<line x1="44" y1="114.0" x2="704" y2="114.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="36" y="118.0" text-anchor="end" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">60</text>
+<line x1="44" y1="64.0" x2="704" y2="64.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="36" y="68.0" text-anchor="end" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">80</text>
+<path d="M65.0,264.0V260.5Q65.0,256.5 69.0,256.5H85.0Q89.0,256.5 89.0,260.5V264.0Z" fill="#eb6834"/>
+<text x="77.0" y="282" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">2017</text>
+<path d="M131.0,264.0V260.5Q131.0,256.5 135.0,256.5H151.0Q155.0,256.5 155.0,260.5V264.0Z" fill="#eb6834"/>
+<text x="143.0" y="282" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">2018</text>
+<path d="M197.0,264.0V259.0H221.0V264.0Z" fill="#2a78d6"/>
+<path d="M197.0,257.0V255.5Q197.0,251.5 201.0,251.5H217.0Q221.0,251.5 221.0,255.5V257.0Z" fill="#eb6834"/>
+<text x="209.0" y="282" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">2019</text>
+<path d="M263.0,264.0V246.5H287.0V264.0Z" fill="#2a78d6"/>
+<path d="M263.0,244.5V243.0Q263.0,239.0 267.0,239.0H283.0Q287.0,239.0 287.0,243.0V244.5Z" fill="#eb6834"/>
+<text x="275.0" y="282" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">2020</text>
+<path d="M329.0,264.0V251.5H353.0V264.0Z" fill="#2a78d6"/>
+<path d="M329.0,249.5V240.5Q329.0,236.5 333.0,236.5H349.0Q353.0,236.5 353.0,240.5V249.5Z" fill="#eb6834"/>
+<text x="341.0" y="282" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">2021</text>
+<path d="M395.0,264.0V239.0H419.0V264.0Z" fill="#2a78d6"/>
+<path d="M395.0,237.0V223.0Q395.0,219.0 399.0,219.0H415.0Q419.0,219.0 419.0,223.0V237.0Z" fill="#eb6834"/>
+<text x="407.0" y="282" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">2022</text>
+<path d="M461.0,264.0V229.0H485.0V264.0Z" fill="#2a78d6"/>
+<path d="M461.0,227.0V223.0Q461.0,219.0 465.0,219.0H481.0Q485.0,219.0 485.0,223.0V227.0Z" fill="#eb6834"/>
+<text x="473.0" y="282" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">2023</text>
+<path d="M527.0,264.0V204.0H551.0V264.0Z" fill="#2a78d6"/>
+<path d="M527.0,202.0V190.5Q527.0,186.5 531.0,186.5H547.0Q551.0,186.5 551.0,190.5V202.0Z" fill="#eb6834"/>
+<text x="539.0" y="282" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">2024</text>
+<path d="M593.0,264.0V194.0H617.0V264.0Z" fill="#2a78d6"/>
+<path d="M593.0,192.0V140.5Q593.0,136.5 597.0,136.5H613.0Q617.0,136.5 617.0,140.5V192.0Z" fill="#eb6834"/>
+<text x="605.0" y="282" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">2025</text>
+<path d="M659.0,264.0V134.0H683.0V264.0Z" fill="#2a78d6"/>
+<path d="M659.0,132.0V108.0Q659.0,104.0 663.0,104.0H679.0Q683.0,104.0 683.0,108.0V132.0Z" fill="#eb6834"/>
+<text x="671.0" y="282" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">2026*</text>
+<text x="671.0" y="98.0" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#0b0b0b">64</text>
+<line x1="44" y1="264" x2="704" y2="264" stroke="#c3c2b7" stroke-width="1"/>
+<text x="704" y="26" text-anchor="end" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#898781">* 2026 counts run to November</text>
+</svg>
