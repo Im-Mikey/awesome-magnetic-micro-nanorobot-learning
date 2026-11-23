@@ -15,7 +15,7 @@
 2026-11-23	exclude	doi:10.3390/pharmaceutics18111381	Artificial Intelligence, Microrobots/Nanorobots and Pharmaceutically Optimized Nanocarrier Systems for Precision Tumor Multitargeting
 2026-11-23	include	doi:10.54254/2755-2721/2026.ld38752	DDPG-Based Path Planning for Medical Microrobot Vascular Navigation
 2026-11-23	exclude	doi:10.1016/j.onano.2026.100327	AI-enabled nanobots for precision agriculture bridging nanotechnology, medical nanorobotics and artificial intelligence: A prospective review
-2026-11-23	maybe	doi:10.1007/s11012-026-02194-4	Robust data-driven velocity control of stick–slip planar micro-robots: comparison between three advanced control frameworks
+2026-11-23	exclude	doi:10.1007/s11012-026-02194-4	Robust data-driven velocity control of stick–slip planar micro-robots: comparison between three advanced control frameworks
 2026-11-23	exclude	doi:10.1021/acsnanomed.6c00229	Next-Generation Intelligent Adaptive Micro/Nanorobots for Precise Intervention of Central Nervous System Injuries: Advances, Clinical Hurdles, and Future Directions
 2026-11-23	maybe	arxiv:2607.20100;doi:10.1103/st8r-wrrd	Model inference from fluid flow in continuum theories of active matter
 2026-11-23	include	doi:10.3390/act15100538	Hybrid Path Planning and Reinforcement Learning-Based Magnetic Guidewire Navigation in Cardiac Intervention
@@ -30,7 +30,7 @@
 2026-11-23	exclude	doi:10.1002/adfm.79654	Intelligent Structures and Their Physical Foundations of Intelligence in Magnetic Miniature Robots
 2026-11-23	exclude	doi:10.3762/bjnano.17.98;pmid:42936742	Artificial intelligence and machine learning for magnetic nanoparticles and nanocarriers in cancer imaging, drug delivery, and magnetic control: a systematic review
 2026-11-23	exclude	doi:10.1103/kdw1-g52t	Simulation-driven discovery of morphology-function relationships in microswimmers
-2026-11-23	maybe	doi:10.1016/j.ijsolstr.2026.114404	AI-driven deformation control of hard-magnetic soft beams
+2026-11-23	exclude	doi:10.1016/j.ijsolstr.2026.114404	AI-driven deformation control of hard-magnetic soft beams
 2026-11-23	exclude	doi:10.1021/acsaelm.6c01934	A Lightweight Data-Driven Scheme for the Inverse Problem of Morphable Surface by Electromagnetic Actuation
 2026-11-23	exclude	doi:10.2147/ijn.s641995	Engineering Micro/Nanorobots for Tumor Barrier Crossing: Design Principles, Multilevel Barrier Overcoming, and Challenges Toward Clinical Intelligence
 2026-11-23	exclude	doi:10.1002/adma.75458;pmid:42908197	Magneto-Propelled Micromotors for Integrated Capture and Catalytic Upcycling of Micro/Nanoplastics
@@ -45,7 +45,7 @@
 2026-11-23	include	doi:10.1016/j.birob.2026.100383	L-MSP: A language-conditioned predictive framework for robust magnetic state estimation and active safety control in continuum robots
 2026-11-23	exclude	doi:10.1039/d6tb01593j;pmid:42808882	Programmable dynamics of magnetic nanobeads via anomalous diffusion and field-induced assembly
 2026-11-23	exclude	doi:10.5281/zenodo.23497750	REGENERATIVE MEDICINE MICROROBOTIC SWARMS AT THE LIMIT STARLI Research Works | Flagship 06 | Research Review Edition | October 2026 Can externally actuated microrobot collectives support measurable local delivery research in regenerative tissue models without increasing off-target material burden or compromising biological integrity? This prospective research monograph studies a bounded intersection of microscale transport, collective control, organ-on-chip systems, inert surrogate cargo release, and independent functional verification. The volume distinguishes five observables that are too often collapsed: robot navigation, release kinetics, local concentration-time exposure, actual tissue functional response, and complete retrieval or disposal of device materials. Its central physical framework couples advection-diffusion-reaction transport to experimentally calibrated agent counts and a noncompensatory safety envelope for wall shear, unintended deposition, localization uncertainty, and missing material. Thirty diverse mathematical derivation plates link conservation laws, magnetic and acoustic actuation, near-wall hydrodynamics, stochastic state estimation, correlated sensor error, safe control, biological barrier transport and whole-system resource accounting to 82 research chapters and 410 independently paginated study lenses. Two hundred Research Gates propose discriminating experiments, strong conventional comparators, falsification routes and successor-ready evidence records. Thirty-three Phoenix Answer Embryos offer revisable candidates for future instruments, controls and negative-result studies. The research roadmap is deliberately nonclinical. It addresses inert tracers, fabricated phantoms and appropriately governed tissue-chip or preclinical platforms, not a validated regenerative therapy, human drug delivery protocol or autonomous in-body medical robot. Published DOI references support relevant background mechanisms in their original settings; they do not validate this proposed integrated system. Full experimental confirmation, systematic literature review and external specialist audit remain future work
-2026-11-23	maybe	doi:10.1016/j.nxnano.2026.100824	Next-generation medical nanorobotics: biohybrid systems, AI-guided navigation, and clinical translation challenges
+2026-11-23	exclude	doi:10.1016/j.nxnano.2026.100824	Next-generation medical nanorobotics: biohybrid systems, AI-guided navigation, and clinical translation challenges
 2026-11-23	exclude	doi:10.1186/s11671-026-05054-y;pmid:43012938	AI-driven entropy analysis of Sutterby tetra-hybrid nanofluid energy conversion for electromagnetic peristaltic flow
 2026-11-23	exclude	doi:10.1145/3841560.3841564	Towards Untethered Industrial Physical AI: Profiling Cloud–Edge VLA over O-RAN
 2026-11-23	exclude	doi:10.1177/15385744261501102;pmid:42924556	Current Applications of Robotic Surgery in Aortic Procedures: A Scoping Review
@@ -59,23 +59,23 @@
 2026-11-23	upgrade	arxiv:2501.02809;doi:10.1109/tim.2025.3575965	Theoretical Data-Driven MobilePosenet: Lightweight Neural Network for Accurate Calibration-Free 5-DOF Magnet Localization
 2026-11-23	include	doi:10.1016/j.eng.2024.11.020	A Deep Learning-Based Framework for Environment-Adaptive Navigation of Size-Adaptable Microswarms
 2026-11-23	include	doi:10.3390/info13070321	Digital Twin of a Magnetic Medical Microrobot with Stochastic Model Predictive Controller Boosted by Machine Learning in Cyber-Physical Healthcare Systems
-2026-11-23	maybe	doi:10.1038/s42256-020-00231-9	Enabling the future of colonoscopy with intelligent and autonomous magnetic manipulation
-2026-11-23	maybe	doi:10.1002/adma.202312956	Swarm Autonomy: From Agent Functionalization to Machine Intelligence
+2026-11-23	exclude	doi:10.1038/s42256-020-00231-9	Enabling the future of colonoscopy with intelligent and autonomous magnetic manipulation
+2026-11-23	exclude	doi:10.1002/adma.202312956	Swarm Autonomy: From Agent Functionalization to Machine Intelligence
 2026-11-23	maybe	doi:10.1109/aim65483.2026.11658232	Deep Neural Network-Based Control of Microswarms for Long-Term Locomotion
 2026-11-23	maybe	doi:10.1007/978-981-95-4897-2_44	Reinforcement Learning-Based Motion Control of Jellyfish Millirobots
 2026-11-23	maybe	doi:10.1109/gseact68539.2026.11620180	Deep Reinforcement Learning-Driven Nanobot Collectives for Micro-Thrombus Localization and Cardiovascular Flow Optimization
 2026-11-23	maybe	doi:10.1109/fasta70174.2026.11548713	Autonomous Magnetic Control of Capsule Robots with Deep Reinforcement Learning
-2026-11-23	maybe	doi:10.1109/nsens71111.2026.11663130	Rule-Driven Self-Organized Swarm Delivery to Evolutionary Nanorobots
+2026-11-23	exclude	doi:10.1109/nsens71111.2026.11663130	Rule-Driven Self-Organized Swarm Delivery to Evolutionary Nanorobots
 2026-11-23	maybe	doi:10.1109/nsens71111.2026.11663124	Evolving Nanorobots in Nonstationary Biological Landscapes
 2026-11-23	maybe	doi:10.1109/nano67986.2026.11667610	LLM-Guided Co-Evolution of Nanorobot Morphology and Control for Tumor Targeting
-2026-11-23	maybe	doi:10.1109/marss70227.2026.11655676	A FEM Framework for Simulating Magnetic Soft Continuum Robots via Consistent Torque-to-Nodal Force Mapping
+2026-11-23	exclude	doi:10.1109/marss70227.2026.11655676	A FEM Framework for Simulating Magnetic Soft Continuum Robots via Consistent Torque-to-Nodal Force Mapping
 2026-11-23	maybe	doi:10.1109/icmtim69588.2026.11526223	Soft-Magnetic-Elastomer-Based Shape Sensing of Continuum Robots Using Magnetic Imaging and Convolutional Neural Network
 2026-11-23	maybe	doi:10.1109/cis-ram71614.2026.11668487	Uncertainty-Resilient Fuzzy Reinforcement Learning for Autonomous Endovascular Navigation of Magnetic Vascular Catheter Robots
 2026-11-23	exclude	doi:10.1109/ccdc69976.2026.11559736	A Feedback-Enhanced Neural Network with Probabilistic Signaling for Noise-Robust Collision Perception
 2026-11-23	exclude	doi:10.1109/iraset68627.2026.11538574	A Digital Twin of Schooling Instability: Active Matter and Machine Learning for Climate-Resilient Marine Systems
 2026-11-23	exclude	doi:10.1109/oceans66983.2026.11616815	Platform Calibration for Quantum-Based Magnetic Navigation in Marine Environments
 2026-11-23	exclude	doi:10.33012/2026.20638	Transect-Based Magnetic Navigation Using Confidence Likelihood Estimation
-2026-11-23	maybe	doi:10.1088/1742-6596/3337/1/012034	Oil-chamber profile optimization design for drag reduction in an underactuated capsule robot with a suspended rotor
+2026-11-23	exclude	doi:10.1088/1742-6596/3337/1/012034	Oil-chamber profile optimization design for drag reduction in an underactuated capsule robot with a suspended rotor
 2026-11-23	exclude	arxiv:2510.20174;doi:10.1109/icra57385.2026.11696715	Reinforcement Learning-based Robust Wall Climbing Locomotion Controller in Ferromagnetic Environment
 2026-11-23	exclude	doi:10.1109/aicconf69182.2026.11600725	Gaussian Regression Process Modeling of Bioconvective Nanofluid Flow in a Magnetically Driven Square Cavity
 2026-11-23	exclude	doi:10.5281/zenodo.20782117	Modes of Sophtar Improvisation
@@ -85,3 +85,14 @@
 2026-11-23	exclude	doi:10.1007/978-3-032-28520-1_82	Autonomous Control of Biochemical Nanorobots for Retinal Navigation
 2026-11-23	exclude	doi:10.1109/etcc69750.2026.11682016	An Intelligent Nanobot Navigation Framework for Thrombosis Detection in Blood Vessels
 2026-11-23	exclude	doi:10.1109/eicct69950.2026.11564707	A Compact Multi-Modal Sensing and Six-Channel Driving IC for Smart Micro-Robots
+2026-11-23	include	doi:10.1088/1361-648x/aec211	Machine learning techniques for understanding pattern formation and self-assembly in active colloidal systems
+2026-11-23	include	doi:10.1007/978-981-95-4897-2_44	Reinforcement Learning-Based Motion Control of Jellyfish Millirobots
+2026-11-23	include	doi:10.1109/aim65483.2026.11658232	Deep Neural Network-Based Control of Microswarms for Long-Term Locomotion
+2026-11-23	include	doi:10.1109/gseact68539.2026.11620180	Deep Reinforcement Learning-Driven Nanobot Collectives for Micro-Thrombus Localization and Cardiovascular Flow Optimization
+2026-11-23	include	doi:10.1007/s10409-026-60469-x	A deep energy method for hard-magnetic soft materials
+2026-11-23	include	doi:10.1109/nsens71111.2026.11663124	Evolving Nanorobots in Nonstationary Biological Landscapes
+2026-11-23	include	doi:10.1109/nano67986.2026.11667610	LLM-Guided Co-Evolution of Nanorobot Morphology and Control for Tumor Targeting
+2026-11-23	include	arxiv:2607.20100;doi:10.1103/st8r-wrrd	Model inference from fluid flow in continuum theories of active matter
+2026-11-23	include	doi:10.1109/fasta70174.2026.11548713	Autonomous Magnetic Control of Capsule Robots with Deep Reinforcement Learning
+2026-11-23	include	doi:10.1109/icmtim69588.2026.11526223	Soft-Magnetic-Elastomer-Based Shape Sensing of Continuum Robots Using Magnetic Imaging and Convolutional Neural Network
+2026-11-23	include	doi:10.1109/cis-ram71614.2026.11668487	Uncertainty-Resilient Fuzzy Reinforcement Learning for Autonomous Endovascular Navigation of Magnetic Vascular Catheter Robots
