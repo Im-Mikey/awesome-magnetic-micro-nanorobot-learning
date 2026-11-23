@@ -82,3 +82,6 @@
 2026-11-23	exclude	doi:10.33012/2026.20618	Navigation in GNSS-Denied Environments Using MEMS-Grade Sensors and Geophysical Anomalies: A Particle Filter Approach
 2026-11-23	upgrade	arxiv:2605.28486;doi:10.1109/marss70227.2026.11655691	Mag-VLA: Vision-Language-Action Model for Bimanual Magnetically Actuated Microrobot Manipulation
 2026-11-23	upgrade	arxiv:2602.06618;doi:10.15607/rss.2026.xxii.165	Structured Learning for Electromagnetic Field Modeling and Real-Time Inversion
+2026-11-23	exclude	doi:10.1007/978-3-032-28520-1_82	Autonomous Control of Biochemical Nanorobots for Retinal Navigation
+2026-11-23	exclude	doi:10.1109/etcc69750.2026.11682016	An Intelligent Nanobot Navigation Framework for Thrombosis Detection in Blood Vessels
+2026-11-23	exclude	doi:10.1109/eicct69950.2026.11564707	A Compact Multi-Modal Sensing and Six-Channel Driving IC for Smart Micro-Robots
