@@ -377,4 +377,4 @@ Know a paper that is missing, or spot a broken link? Open an issue or a pull req
 
 ## Acknowledgements
 
-Inspired by [Awesome-Humanoid-Robot-Learning](https://github.com/YanjieZe/awesome-humanoid-robot-learning), which gave us the idea for the papers-per-year chart and the daily updates.
+Inspired by [Awesome-Humanoid-Robot-Learning](https://github.com/YanjieZe/awesome-humanoid-robot-learning), which gave us the idea for the README layout, the papers-per-year chart and the daily updates.
