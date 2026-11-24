@@ -7,7 +7,7 @@ Run from the repository root after adding papers:
 It counts every list entry in README.md (lines such as "- [Title](link) - Venue YYYY.MM. ...",
 with 🌟 at the end when the code is public), splits them into core sections and "Related:" sections, then rewrites:
 - the "> N core papers + ..." line and the per-section counts in Contents;
-- the date on the "last updated" badge next to the title;
+- assets/last_updated.svg, the date badge next to the title;
 - assets/paper_growth*.svg, papers per year;
 - assets/learning_methods*.svg, papers per year by learning method;
 - the table between the <!-- stats-table:start --> and <!-- stats-table:end --> markers.
@@ -33,9 +33,28 @@ ENTRY = re.compile(r"^- \[[^\]]+\]\(\S+?\) - .+? (\d{4})(?:\.\d{2})?\.( .*)?$")
 STATS = re.compile(r"^> \d+ core papers \+ \d+ related papers, \d+ with open-source code(?: \(\d+%\))?\. "
                    r"Last updated: .*$")
 TOC = re.compile(r"^(?P<head>- \[(?P<name>[^\]]+)\]\(#[^)]+\) )\(\d+\)$")
-# The badge is a fixed shields.io image with the date in its URL. Badges that ask the GitHub API for
-# the date often time out in GitHub's image proxy and show up broken.
-UPDATED_BADGE = re.compile(r"(https://img\.shields\.io/badge/last%20updated-)\d{4}--\d{2}--\d{2}-")
+# The "last updated" badge next to the title, in the flat shields.io style (shields.io is CC0). It is
+# drawn here and kept in assets/ because GitHub's image proxy often fails to fetch new images from
+# badge services. Verdana digits all have the same width, so every date fits this layout.
+UPDATED_BADGE = (
+    '<svg xmlns="http://www.w3.org/2000/svg" width="154" height="20" role="img" aria-label="last updated: {date}">'
+    '<title>last updated: {date}</title><filter id="blur"><feGaussianBlur stdDeviation="16"/></filter>'
+    '<linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/>'
+    '<stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="r">'
+    '<rect width="154" height="20" rx="3"/></clipPath><g clip-path="url(#r)">'
+    '<rect width="79" height="20" fill="#555"/><rect x="79" width="75" height="20" fill="#007ec6"/>'
+    '<rect width="154" height="20" fill="url(#s)"/></g>'
+    '<g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" '
+    'text-rendering="geometricPrecision" font-size="110">'
+    '<g transform="scale(.1)"><g aria-hidden="true" fill="#010101">'
+    '<text x="405" y="150" fill-opacity=".8" filter="url(#blur)" textLength="690">last updated</text>'
+    '<text x="405" y="150" fill-opacity=".3" textLength="690">last updated</text></g>'
+    '<text x="405" y="140" textLength="690">last updated</text></g><g transform="scale(.1)">'
+    '<g aria-hidden="true" fill="#010101">'
+    '<text x="1155" y="150" fill-opacity=".8" filter="url(#blur)" textLength="650">{date}</text>'
+    '<text x="1155" y="150" fill-opacity=".3" textLength="650">{date}</text></g>'
+    '<text x="1155" y="140" textLength="650">{date}</text></g></g></svg>\n'
+)
 TABLE_START, TABLE_END = "<!-- stats-table:start -->", "<!-- stats-table:end -->"
 ID_RE = re.compile(r"doi\.org/(10\.\d{4,9}/\S+?)(?=\)(?:[,\s]|$)|[\s\]]|$)|arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5})", re.I)
 TITLE_RE = re.compile(r"^- \[([^\]]+)\]\(")  # the title is the link text
@@ -278,6 +297,8 @@ def main():
             footnote="Methods are assigned from titles and abstracts by keyword rules, so counts are approximate.",
             right=150, direct_labels=True)
         (ASSETS / f"learning_methods{suffix}.svg").write_text(methods, encoding="utf-8", newline="\n")
+    (ASSETS / "last_updated.svg").write_text(UPDATED_BADGE.replace("{date}", f"{today:%Y-%m-%d}"),
+                                             encoding="utf-8", newline="\n")
 
     total = sum(core.values()) + sum(rel.values())
     stats = (f"> {sum(core.values())} core papers + {sum(rel.values())} related papers, {n_code} with "
@@ -288,9 +309,7 @@ def main():
         if STATS.match(line):
             return stats
         m = TOC.match(line)
-        if m and m["name"] in counts:
-            return f"{m['head']}({counts[m['name']]})"
-        return UPDATED_BADGE.sub(rf"\g<1>{today:%Y--%m--%d}-", line)
+        return f"{m['head']}({counts[m['name']]})" if m and m["name"] in counts else line
 
     out = [refresh(line) for line in lines]
     if TABLE_START in out and TABLE_END in out and out.index(TABLE_START) < out.index(TABLE_END):

@@ -22,6 +22,7 @@ import time
 import traceback
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
@@ -35,6 +36,13 @@ def load(name, path):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+def is_svg(text):
+    try:
+        return ET.fromstring(text).tag.endswith("svg")
+    except ET.ParseError:
+        return False
 
 
 def cand(**fields):
@@ -264,14 +272,9 @@ def checks(du, us, copy, check):
     check("model include: a loose keyword match still waits for review", loose["decision"] == "maybe")
     check("model include: a strict keyword match goes straight in", strict["decision"] == "include")
 
-    # --- adding a paper records its learning method, redraws the charts and moves the badge date
-    badge_date = re.compile(r"last%20updated-(\d{4}--\d{2}--\d{2})-")
-    title, rest = readme0.split("\n", 1)
-    if badge_date.search(title):
-        title = badge_date.sub("last%20updated-2020--01--01-", title)
-    else:  # the badge has been removed from README: test the rule on a made-up one
-        title += " [![Last Updated](https://img.shields.io/badge/last%20updated-2020--01--01-blue)](#)"
-    du.README.write_text(title + "\n" + rest, encoding="utf-8")
+    # --- adding a paper records its learning method and redraws the charts and the date badge
+    badge_file = copy / "assets" / "last_updated.svg"
+    badge_file.write_text("stale", encoding="utf-8")
     done = du.insert({"candidates": [dict(strict, section="Control and Navigation")]})
     text = du.README.read_text(encoding="utf-8")
     tags = json.loads(methods_file.read_text(encoding="utf-8"))
@@ -279,9 +282,12 @@ def checks(du, us, copy, check):
     check("insert: charts and numbers table are redrawn", (copy / "assets" / "learning_methods.svg").exists()
           and "| **Total** |" in text)
     stats_date = re.search(r"Last updated: (\d{4}-\d{2}-\d{2})\.", text)
-    badge = badge_date.search(text.split("\n", 1)[0])
-    check("insert: the 'last updated' badge shows the date of the stats line", bool(stats_date and badge)
-          and badge.group(1) == stats_date.group(1).replace("-", "--"))
+    badge = badge_file.read_text(encoding="utf-8")
+    check("insert: the 'last updated' badge is redrawn with the date of the stats line", bool(stats_date)
+          and f"<title>last updated: {stats_date.group(1)}</title>" in badge and is_svg(badge))
+    check("badges: every image in the title that lives in the repo is a valid SVG", all(
+        is_svg((copy / src).read_text(encoding="utf-8")) for src in re.findall(r"!\[[^\]]*\]\((assets/[^)]+)\)",
+                                                                                text.split("\n", 1)[0])))
     check("insert: README is still consistent", du.check_readme() == [])
     reset()
 
