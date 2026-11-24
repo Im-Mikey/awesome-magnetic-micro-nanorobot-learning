@@ -69,6 +69,12 @@ python scripts/update_stats.py
 
 This script, and the daily update script described below, need only the Python standard library.
 
+After changing either script, run the tests. They work offline on a temporary copy of the repository, so they never change your files. Add `-v` to list every check.
+
+```bash
+python scripts/test_scripts.py
+```
+
 ### Daily updates
 
 [`.github/workflows/daily-update.yml`](.github/workflows/daily-update.yml) runs [`scripts/daily_update.py`](scripts/daily_update.py) every day at 23:17 UTC. Each run does the following:
