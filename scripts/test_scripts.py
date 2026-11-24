@@ -13,6 +13,7 @@ import importlib.util
 import io
 import json
 import pathlib
+import re
 import shutil
 import sys
 import tempfile
@@ -263,12 +264,24 @@ def checks(du, us, copy, check):
     check("model include: a loose keyword match still waits for review", loose["decision"] == "maybe")
     check("model include: a strict keyword match goes straight in", strict["decision"] == "include")
 
-    # --- adding a paper records its learning method and redraws the charts
+    # --- adding a paper records its learning method, redraws the charts and moves the badge date
+    badge_date = re.compile(r"last%20updated-(\d{4}--\d{2}--\d{2})-")
+    title, rest = readme0.split("\n", 1)
+    if badge_date.search(title):
+        title = badge_date.sub("last%20updated-2020--01--01-", title)
+    else:  # the badge has been removed from README: test the rule on a made-up one
+        title += " [![Last Updated](https://img.shields.io/badge/last%20updated-2020--01--01-blue)](#)"
+    du.README.write_text(title + "\n" + rest, encoding="utf-8")
     done = du.insert({"candidates": [dict(strict, section="Control and Navigation")]})
+    text = du.README.read_text(encoding="utf-8")
     tags = json.loads(methods_file.read_text(encoding="utf-8"))
     check("insert: the learning-method tag is recorded", len(done["added"]) == 1 and tags.get("arxiv:2611.22222") == "rl")
     check("insert: charts and numbers table are redrawn", (copy / "assets" / "learning_methods.svg").exists()
-          and "| **Total** |" in du.README.read_text(encoding="utf-8"))
+          and "| **Total** |" in text)
+    stats_date = re.search(r"Last updated: (\d{4}-\d{2}-\d{2})\.", text)
+    badge = badge_date.search(text.split("\n", 1)[0])
+    check("insert: the 'last updated' badge shows the date of the stats line", bool(stats_date and badge)
+          and badge.group(1) == stats_date.group(1).replace("-", "--"))
     check("insert: README is still consistent", du.check_readme() == [])
     reset()
 

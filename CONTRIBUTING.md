@@ -61,7 +61,7 @@ This is the style [awesome-lint](https://github.com/sindresorhus/awesome-lint) c
 
 ## For maintainers
 
-After adding entries by hand, refresh the paper counts, the numbers in Contents and the papers-per-year chart:
+After adding entries by hand, refresh the paper counts, the numbers in Contents, the two charts, the numbers table and the date on the "last updated" badge:
 
 ```bash
 python scripts/update_stats.py

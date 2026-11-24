@@ -7,6 +7,7 @@ Run from the repository root after adding papers:
 It counts every list entry in README.md (lines such as "- [Title](link) - Venue YYYY.MM. ...",
 with 🌟 at the end when the code is public), splits them into core sections and "Related:" sections, then rewrites:
 - the "> N core papers + ..." line and the per-section counts in Contents;
+- the date on the "last updated" badge next to the title;
 - assets/paper_growth*.svg, papers per year;
 - assets/learning_methods*.svg, papers per year by learning method;
 - the table between the <!-- stats-table:start --> and <!-- stats-table:end --> markers.
@@ -32,6 +33,9 @@ ENTRY = re.compile(r"^- \[[^\]]+\]\(\S+?\) - .+? (\d{4})(?:\.\d{2})?\.( .*)?$")
 STATS = re.compile(r"^> \d+ core papers \+ \d+ related papers, \d+ with open-source code(?: \(\d+%\))?\. "
                    r"Last updated: .*$")
 TOC = re.compile(r"^(?P<head>- \[(?P<name>[^\]]+)\]\(#[^)]+\) )\(\d+\)$")
+# The badge is a fixed shields.io image with the date in its URL. Badges that ask the GitHub API for
+# the date often time out in GitHub's image proxy and show up broken.
+UPDATED_BADGE = re.compile(r"(https://img\.shields\.io/badge/last%20updated-)\d{4}--\d{2}--\d{2}-")
 TABLE_START, TABLE_END = "<!-- stats-table:start -->", "<!-- stats-table:end -->"
 ID_RE = re.compile(r"doi\.org/(10\.\d{4,9}/\S+?)(?=\)(?:[,\s]|$)|[\s\]]|$)|arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5})", re.I)
 TITLE_RE = re.compile(r"^- \[([^\]]+)\]\(")  # the title is the link text
@@ -284,7 +288,9 @@ def main():
         if STATS.match(line):
             return stats
         m = TOC.match(line)
-        return f"{m['head']}({counts[m['name']]})" if m and m["name"] in counts else line
+        if m and m["name"] in counts:
+            return f"{m['head']}({counts[m['name']]})"
+        return UPDATED_BADGE.sub(rf"\g<1>{today:%Y--%m--%d}-", line)
 
     out = [refresh(line) for line in lines]
     if TABLE_START in out and TABLE_END in out and out.index(TABLE_START) < out.index(TABLE_END):
