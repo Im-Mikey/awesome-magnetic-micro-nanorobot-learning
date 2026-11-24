@@ -1368,12 +1368,15 @@ def load_update_stats():
 
 
 def refresh_stats(papers):
-    """Record the learning method of newly listed papers (for the chart), then redraw counts and charts."""
+    """Record the learning method of newly listed papers (for the chart), then redraw counts and charts.
+    An upgraded preprint keeps the method it already had: the published record often has no abstract,
+    so judging it again from the title alone would usually get it wrong."""
     stats = load_update_stats()
     methods = stats.load_methods()
     for c in papers:
-        method = stats.classify_method(c["title"], c.get("abstract", ""))
-        for k in id_keys(c):
+        old = [methods[k] for k in stats.entry_keys(c.get("upgrade_of") or "") if methods.get(k) in stats.SHORT_LABEL]
+        method = old[0] if old else stats.classify_method(c["title"], c.get("abstract", ""))
+        for k in id_keys(c) | set(stats.entry_keys(c.get("line") or "")):
             methods[k] = method
     stats.save_methods(methods)
     stats.main()

@@ -25,7 +25,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 
 | Year      |    Core | Related | RL & imitation learning | Deep learning | Language & foundation models | Other ML & optimisation |
 | --------- | ------: | ------: | ----------------------: | ------------: | ---------------------------: | ----------------------: |
-| 2026*     |      59 |      16 |                      32 |            21 |                            5 |                      17 |
+| 2026*     |      59 |      16 |                      32 |            22 |                            5 |                      16 |
 | 2025      |      28 |      23 |                      24 |            16 |                            2 |                       9 |
 | 2024      |      24 |       7 |                       8 |            12 |                            0 |                      11 |
 | 2023      |      14 |       4 |                       7 |             7 |                            0 |                       4 |
@@ -35,7 +35,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 | 2019      |       2 |       3 |                       3 |             1 |                            0 |                       1 |
 | 2018      |       0 |       3 |                       0 |             2 |                            0 |                       1 |
 | 2017      |       0 |       3 |                       2 |             1 |                            0 |                       0 |
-| **Total** | **149** |  **76** |                  **90** |        **73** |                        **7** |                  **55** |
+| **Total** | **149** |  **76** |                  **90** |        **74** |                        **7** |                  **54** |
 
 \* 2026 counts run to November. Learning methods are assigned from titles and abstracts by keyword rules, so treat them as approximate.
 
