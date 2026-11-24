@@ -97,5 +97,5 @@
 2026-11-23	include	doi:10.1109/icmtim69588.2026.11526223	Soft-Magnetic-Elastomer-Based Shape Sensing of Continuum Robots Using Magnetic Imaging and Convolutional Neural Network
 2026-11-23	include	doi:10.1109/cis-ram71614.2026.11668487	Uncertainty-Resilient Fuzzy Reinforcement Learning for Autonomous Endovascular Navigation of Magnetic Vascular Catheter Robots
 2026-11-24	exclude	arxiv:2605.24041	Iterative Refinement Neural Operators are Learned Fixed-Point Solvers: A Principled Approach to Spectral Bias Mitigation
-2026-11-24	maybe	doi:10.1021/acssensors.6c03254	Metal–Organic-Framework-Encoded Magnetic Soft Robot for Untethered Multimodal Hazard Mapping and Autonomous Source Localization in Confined Spaces
+2026-11-24	exclude	doi:10.1021/acssensors.6c03254	Metal–Organic-Framework-Encoded Magnetic Soft Robot for Untethered Multimodal Hazard Mapping and Autonomous Source Localization in Confined Spaces
 2026-11-24	upgrade	doi:10.1109/iros61738.2026.11777022	Robust Autonomous Control of a Magnetic Millirobot in In Vitro Cardiac Flow
