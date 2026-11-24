@@ -6,7 +6,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 
 **Daily updates.** A [free bot](.github/workflows/daily-update.yml) searches arXiv, OpenAlex, Crossref, PubMed and Semantic Scholar every day. Between them these sources index journals and conferences from all major publishers, including IEEE, Springer Nature, Wiley, Elsevier, ACS, RSC and MDPI. Papers the bot is unsure about wait for review in [NEW_PAPERS.md](NEW_PAPERS.md). Keyword search still misses some papers, so suggestions are welcome.
 
-> 149 core papers + 76 related papers, 17 with open-source code (8%). Last updated: 2026-11-23.
+> 149 core papers + 76 related papers, 17 with open-source code (8%). Last updated: 2026-11-24.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/paper_growth_dark.svg">
@@ -25,7 +25,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 
 | Year      |    Core | Related | RL & imitation learning | Deep learning | Language & foundation models | Other ML & optimisation |
 | --------- | ------: | ------: | ----------------------: | ------------: | ---------------------------: | ----------------------: |
-| 2026*     |      59 |      16 |                      32 |            22 |                            5 |                      16 |
+| 2026*     |      59 |      16 |                      32 |            21 |                            5 |                      17 |
 | 2025      |      28 |      23 |                      24 |            16 |                            2 |                       9 |
 | 2024      |      24 |       7 |                       8 |            12 |                            0 |                      11 |
 | 2023      |      14 |       4 |                       7 |             7 |                            0 |                       4 |
@@ -35,7 +35,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 | 2019      |       2 |       3 |                       3 |             1 |                            0 |                       1 |
 | 2018      |       0 |       3 |                       0 |             2 |                            0 |                       1 |
 | 2017      |       0 |       3 |                       2 |             1 |                            0 |                       0 |
-| **Total** | **149** |  **76** |                  **90** |        **74** |                        **7** |                  **54** |
+| **Total** | **149** |  **76** |                  **90** |        **73** |                        **7** |                  **55** |
 
 \* 2026 counts run to November. Learning methods are assigned from titles and abstracts by keyword rules, so treat them as approximate.
 
@@ -98,7 +98,6 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [STTRL-DVO: Transformer-Based Reinforcement Learning for Robust Dynamic Target Tracking in Cluttered Environments](https://doi.org/10.1109/TRO.2026.3701578) - IEEE T-RO 2026.06.
 - [Learning control of micro-robots in vascular systems](https://doi.org/10.1088/2631-8695/ae7ecd) - Engineering Research Express 2026.06.
 - [Risk-Assessment and Visual Perception of Autonomous Microrobots Using Model-Free Reinforcement Learning to Cope With Multi-Challenging Environments](https://doi.org/10.1109/ACCESS.2026.3686841) - IEEE Access 2026.04.
-- [Robust Autonomous Control of a Magnetic Millirobot in In Vitro Cardiac Flow](https://arxiv.org/abs/2604.01523) - arXiv 2026.04.
 - [Autonomous Data Collection via Model-Free Reinforcement Learning Enables Control of Magnetic Soft Robots](https://doi.org/10.1016/j.robot.2026.105464) - Robotics and Autonomous Systems 2026.03.
 - [Adaptive Shared Cascade Navigation Control of Magnetic Microrobots in Unstructured Dynamic Environments](https://doi.org/10.1109/TCYB.2026.3658831) - IEEE T-Cyb 2026.02.
 - [Optimal Control of Microswimmers for Trajectory Tracking Using Bayesian Optimization](https://arxiv.org/abs/2602.09563) - arXiv 2026.02.
@@ -107,6 +106,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [Control Barrier Function-Based Reinforcement Learning for Safe Microrobot Autonomous Navigation](https://doi.org/10.1109/ICCA69928.2026.11618029) - ICCA 2026.
 - [A Deep-Learning-Based Control Method for Magnetic Microrobots](https://doi.org/10.1109/CYBER71431.2026.11695512) - CYBER 2026.
 - [Reinforcement Learning-Based Motion Control of Jellyfish Millirobots](https://doi.org/10.1007/978-981-95-4897-2_44) - MLCCIM 2026.
+- [Robust Autonomous Control of a Magnetic Millirobot in In Vitro Cardiac Flow](https://doi.org/10.1109/iros61738.2026.11777022) - IROS 2026. [arXiv](https://arxiv.org/abs/2604.01523)
 - [Hybrid Memory-Augmented Neural Control for Real-Time, Model-Free Actuation of Magnetic Soft Robots](https://doi.org/10.1109/TASE.2025.3628020) - IEEE T-ASE 2025.11.
 - [Real-time autonomous magnetic microrobot navigation across dynamic and biologically relevant environments](https://arxiv.org/abs/2509.05500) - arXiv 2025.09.
 - [Machine learning for automation of 3-DoF control of magnetically-levitated microrobots](https://doi.org/10.1016/j.mechatronics.2025.103356) - Mechatronics 2025.06.

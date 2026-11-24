@@ -7,4 +7,7 @@ Candidates that the [daily update](.github/workflows/daily-update.yml) found but
 
 Either way the paper will not come back, because every paper the bot has looked at is logged in [scripts/processed_ids.txt](scripts/processed_ids.txt).
 
-*Nothing is waiting for review right now.*
+### Perception: Detection, Tracking and Localization
+
+- [Metal–Organic-Framework-Encoded Magnetic Soft Robot for Untethered Multimodal Hazard Mapping and Autonomous Source Localization in Confined Spaces](https://doi.org/10.1021/acssensors.6c03254) - ACS Sensors 2026.11.
+  - Found 2026-11-24 in Crossref. Suggested: Perception: Detection, Tracking and Localization. Why: Abstract lacks clear learning component; unclear if ML used for localization (openai/gpt-oss-120b via api.groq.com)
