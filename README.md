@@ -6,7 +6,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 
 **Daily updates.** A [free bot](.github/workflows/daily-update.yml) searches arXiv, OpenAlex, Crossref, PubMed and Semantic Scholar every day. Between them these sources index journals and conferences from all major publishers, including IEEE, Springer Nature, Wiley, Elsevier, ACS, RSC and MDPI. Papers the bot is unsure about wait for review in [NEW_PAPERS.md](NEW_PAPERS.md). Keyword search still misses some papers, so suggestions are welcome.
 
-> 149 core papers + 76 related papers, 17 with open-source code (8%). Last updated: 2026-11-24.
+> 149 core papers + 76 related papers, 17 with open-source code (8%). Last updated: 2026-11-25.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/paper_growth_dark.svg">
@@ -147,7 +147,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [Reinforcement Learning-Controlled Magnetic Colloid for Micro-cargo Transport](https://doi.org/10.1021/acsami.6c02429) - ACS AMI 2026.05.
 - [Context-Aware Adaptive Shared Control for Magnetically-Driven Bimanual Dexterous Micromanipulation](https://arxiv.org/abs/2603.14388) - arXiv 2026.03.
 - [Hierarchical Multimodal Motion Control of Magnetic Pivot-Walking Millirobotic-Grippers for Autonomous Target Acquisition in Complex Terrains](https://doi.org/10.1109/TRO.2026.3675526) - IEEE T-RO 2026.03.
-- [Residual RL-MPC for Robust Microrobotic Cell Pushing Under Time-Varying Flow](https://arxiv.org/abs/2603.05448) - IROS 2026.
+- [Residual RL–MPC for Robust Microrobotic Cell Pushing Under Time-Varying Flow](https://doi.org/10.1109/iros61738.2026.11777596) - IROS 2026. [arXiv](https://arxiv.org/abs/2603.05448)
 - [Temporal Logic-Guided DQN for Object Delivery and Transportation Using Magnetic Microrobots With Local Control](https://doi.org/10.1109/LRA.2025.3560879) - IEEE RA-L 2025.04.
 - [Efficient Model Learning and Adaptive Tracking Control of Magnetic Micro-Robots for Non-Contact Manipulation](https://doi.org/10.1109/ICRA57147.2024.10610098) - ICRA 2024.
 
