@@ -6,7 +6,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 
 **Daily updates.** A [free bot](.github/workflows/daily-update.yml) searches arXiv, OpenAlex, Crossref, PubMed and Semantic Scholar every day. Between them these sources index journals and conferences from all major publishers, including IEEE, Springer Nature, Wiley, Elsevier, ACS, RSC and MDPI. Papers the bot is unsure about wait for review in [NEW_PAPERS.md](NEW_PAPERS.md). Keyword search still misses some papers, so suggestions are welcome.
 
-> 152 core papers + 76 related papers, 18 with open-source code (8%). Last updated: 2026-11-26.
+> 151 core papers + 77 related papers, 18 with open-source code (8%). Last updated: 2026-11-26.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/paper_growth_dark.svg">
@@ -25,8 +25,8 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 
 | Year      |    Core | Related | RL & imitation learning | Deep learning | Language & foundation models | Other ML & optimisation |
 | --------- | ------: | ------: | ----------------------: | ------------: | ---------------------------: | ----------------------: |
-| 2026*     |      62 |      16 |                      33 |            23 |                            5 |                      17 |
-| 2025      |      28 |      23 |                      24 |            16 |                            2 |                       9 |
+| 2026*     |      60 |      17 |                      31 |            25 |                            5 |                      16 |
+| 2025      |      29 |      23 |                      25 |            16 |                            2 |                       9 |
 | 2024      |      24 |       7 |                       8 |            12 |                            0 |                      11 |
 | 2023      |      14 |       4 |                       7 |             7 |                            0 |                       4 |
 | 2022      |      10 |       8 |                       8 |             6 |                            0 |                       4 |
@@ -35,7 +35,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 | 2019      |       2 |       3 |                       3 |             1 |                            0 |                       1 |
 | 2018      |       0 |       3 |                       0 |             2 |                            0 |                       1 |
 | 2017      |       0 |       3 |                       2 |             1 |                            0 |                       0 |
-| **Total** | **152** |  **76** |                  **91** |        **75** |                        **7** |                  **55** |
+| **Total** | **151** |  **77** |                  **90** |        **77** |                        **7** |                  **54** |
 
 \* 2026 counts run to November. Learning methods are assigned from titles and abstracts by keyword rules, so treat them as approximate.
 
@@ -51,13 +51,13 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [Manipulation and Cargo Delivery](#manipulation-and-cargo-delivery) (6)
 - [Swarms and Multi-Robot Control](#swarms-and-multi-robot-control) (18)
 - [Path and Motion Planning](#path-and-motion-planning) (15)
-- [Perception: Detection, Tracking and Localization](#perception-detection-tracking-and-localization) (19)
+- [Perception: Detection, Tracking and Localization](#perception-detection-tracking-and-localization) (18)
 - [Modeling and System Identification](#modeling-and-system-identification) (9)
 - [Design and Fabrication](#design-and-fabrication) (8)
 - [Foundation Models and LLMs](#foundation-models-and-llms) (7)
 - [Simulators, Datasets and Benchmarks](#simulators-datasets-and-benchmarks) (5)
 - [Hardware and Software Platforms](#hardware-and-software-platforms) (3)
-- [Related: Learning for Other Microswimmers and Active Matter](#related-learning-for-other-microswimmers-and-active-matter) (46)
+- [Related: Learning for Other Microswimmers and Active Matter](#related-learning-for-other-microswimmers-and-active-matter) (47)
 - [Related: Magnetic Continuum Robots, Catheters and Capsules](#related-magnetic-continuum-robots-catheters-and-capsules) (30)
 - [Acknowledgements](#acknowledgements)
 
@@ -105,7 +105,6 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [Machine Learning Achieves Accurate and Smooth Navigation Control for Microrobots](https://doi.org/10.1109/TASE.2026.3650946) - IEEE T-ASE 2026.01.
 - [Control Barrier Function-Based Reinforcement Learning for Safe Microrobot Autonomous Navigation](https://doi.org/10.1109/ICCA69928.2026.11618029) - ICCA 2026.
 - [A Deep-Learning-Based Control Method for Magnetic Microrobots](https://doi.org/10.1109/CYBER71431.2026.11695512) - CYBER 2026.
-- [Reinforcement Learning-Based Motion Control of Jellyfish Millirobots](https://doi.org/10.1007/978-981-95-4897-2_44) - MLCCIM 2026.
 - [Robust Autonomous Control of a Magnetic Millirobot in In Vitro Cardiac Flow](https://doi.org/10.1109/iros61738.2026.11777022) - IROS 2026. [arXiv](https://arxiv.org/abs/2604.01523)
 - [Hybrid Memory-Augmented Neural Control for Real-Time, Model-Free Actuation of Magnetic Soft Robots](https://doi.org/10.1109/TASE.2025.3628020) - IEEE T-ASE 2025.11.
 - [Real-time autonomous magnetic microrobot navigation across dynamic and biologically relevant environments](https://arxiv.org/abs/2509.05500) - arXiv 2025.09.
@@ -114,6 +113,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [Ultrasound Image-Based Average Q-Learning Control of Magnetic Microrobots](https://doi.org/10.1109/TRO.2025.3543261) - IEEE T-RO 2025.02.
 - [Real-Time Obstacle Avoidance for Magnetic Microswimmers Based on Proximal Policy Optimization](https://doi.org/10.1109/CBS65871.2025.11267633) - CBS 2025.
 - [Deep Reinforcement Learning-Based Semi-Autonomous Control for Magnetic Micro-Robot Navigation with Immersive Manipulation](https://doi.org/10.1109/ICRA55743.2025.11128848) - ICRA 2025. [arXiv](https://arxiv.org/abs/2503.06359)
+- [Reinforcement Learning-Based Motion Control of Jellyfish Millirobots](https://doi.org/10.1007/978-981-95-4897-2_44) - MLCCIM 2025. [website](https://zyl-hub.github.io/multimodal-jellyfish-microrobot)
 - [Deep Reinforcement Learning-Based Collision-Free Navigation for Magnetic Helical Microrobots in Dynamic Environments](https://doi.org/10.1109/TASE.2024.3470810) - IEEE T-ASE 2024.10.
 - [Learning automatic navigation control skills for miniature helical robots from human demonstrations](https://doi.org/10.1016/j.engappai.2024.109187) - EAAI 2024.08.
 - [Optimized Magnetic Particle Navigation Based on Data-Driven Model for Enhanced Drug Targeting](https://doi.org/10.1109/ACCESS.2024.3403246) - IEEE Access 2024.05.
@@ -201,7 +201,6 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [On the Pose Estimation of an Untethered Microrobot via Magnetic Localization and Optical Tracking](https://doi.org/10.3390/mi17101196) - Micromachines 2026.10.
 - [Vision-Guided Closed-Loop Autonomous Navigation of Light-Driven Janus Microbots](https://arxiv.org/abs/2610.21222) - arXiv 2026.10.
 - [Selective Class-Aware Refinement (SCAR) Method for Microrobot Detection in Ultrasound Images](https://doi.org/10.3390/s26185798) - Sensors 2026.09.
-- [Wall detection for a microswimmer in Stokesian flows by using hydrodynamic signals](https://doi.org/10.1039/d6sm00517a) - Soft Matter 2026.09.
 - [Machine-intelligent multimodal algebot for intracavitary chemotherapy](https://doi.org/10.1038/s41565-026-02195-0) - Nature Nanotechnology 2026.06.
 - [Non-vision-based localization and feedback control of untethered magnetic microrobots with hall-effect magnetic sensors under actuation field interference](https://doi.org/10.1016/j.sna.2026.117688) - Sensors and Actuators A 2026.03.
 - [Synthetic X-ray-driven tracking and control of miniature medical devices](https://doi.org/10.1038/s42256-026-01190-3) - Nature Machine Intelligence 2026.02.
@@ -314,6 +313,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 #### Simulated microswimmers and active matter
 
 - [Model inference from fluid flow in continuum theories of active matter](https://doi.org/10.1103/st8r-wrrd) - Physical Review E 2026.11. [arXiv](https://arxiv.org/abs/2607.20100)
+- [Wall detection for a microswimmer in Stokesian flows by using hydrodynamic signals](https://doi.org/10.1039/d6sm00517a) - Soft Matter 2026.09.
 - [A critical assessment of reinforcement learning methods for microswimmer navigation in complex flows](https://doi.org/10.1140/epje/s10189-025-00522-2) - EPJ E 2025.10. [arXiv](https://arxiv.org/abs/2505.05525)
 - [Reinforcement learning of a biflagellate model microswimmer](https://doi.org/10.1140/epje/s10189-025-00513-3) - EPJ E 2025.08. [arXiv](https://arxiv.org/abs/2508.15561)
 - [Learning to Navigate in Chemical Fields Without A Map at Low Reynolds Numbers](https://doi.org/10.1002/advs.202510092) - Advanced Science 2025.08.
@@ -350,7 +350,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [Magnetic actuation system based on imitation learning for vascular interventional procedures](https://doi.org/10.1117/12.3131264) - ICRL 2026.
 - [Autonomous Magnetic Control of Capsule Robots with Deep Reinforcement Learning](https://doi.org/10.1109/fasta70174.2026.11548713) - FASTA 2026.
 - [Soft-Magnetic-Elastomer-Based Shape Sensing of Continuum Robots Using Magnetic Imaging and Convolutional Neural Network](https://doi.org/10.1109/icmtim69588.2026.11526223) - ICMTIM 2026.
-- [Uncertainty-Resilient Fuzzy Reinforcement Learning for Autonomous Endovascular Navigation of Magnetic Vascular Catheter Robots](https://doi.org/10.1109/cis-ram71614.2026.11668487) - CIS 2026.
+- [Uncertainty-Resilient Fuzzy Reinforcement Learning for Autonomous Endovascular Navigation of Magnetic Vascular Catheter Robots](https://doi.org/10.1109/cis-ram71614.2026.11668487) - CIS-RAM 2026.
 - [OCT Imaging for Pose Estimation and Feedback Control of an Articulated Magnetic Surgical Tool](https://doi.org/10.1109/LRA.2025.3643300) - IEEE RA-L 2025.12. [website](https://medcvr.utm.utoronto.ca/ral2025-oct-pose.html), [code](https://github.com/MEDCVR/OCT-pose) 🌟
 - [Symmetry-Based Independent Fully Convolutional Neural Networks for Magnetic Localization Using Sensor Array](https://doi.org/10.1109/JSEN.2025.3603679) - IEEE Sensors Journal 2025.09.
 - [Online Adaptive Dynamic Programming for Optimal Position Control of Magnetically Actuated Capsule](https://doi.org/10.1109/TMECH.2025.3587978) - IEEE/ASME T-Mech 2025.07.
