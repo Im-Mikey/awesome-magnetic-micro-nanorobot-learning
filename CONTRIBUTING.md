@@ -46,7 +46,7 @@ This is the style [awesome-lint](https://github.com/sindresorhus/awesome-lint) c
 - **Venue and date** follow the title after ` - ` and end with a full stop.
 - **Date** depends on the kind of paper:
   - Journals: `YYYY.MM` of first online publication, such as early access or "available online". If that date is unknown, use the issue month.
-  - Conferences: the year only.
+  - Conferences: the year of the meeting only, even when the proceedings come out the next year. A joint meeting takes both acronyms, for example `CIS-RAM 2026`.
   - Preprints: the month of the first version.
 - **Extra links** come after that full stop, separated by commas. Use labels from this set: `[arXiv]`, `[bioRxiv]`, `[website]`, `[dataset]` and `[code]`.
 - **Code**: when the official code is public, add a `[code]` link and end the line with 🌟.

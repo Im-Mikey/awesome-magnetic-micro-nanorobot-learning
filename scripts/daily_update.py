@@ -1207,8 +1207,21 @@ def label_and_url(c):
         return None
     m = re.match(r"(\d{4})(?:-(\d{2}))?", c["date"] or "")
     year, month = (m.group(1), m.group(2)) if m else (str(TODAY.year), f"{TODAY.month:02d}")
+    if c["venue_type"] == "conference":
+        year = conference_year(c["venue"], c["event"], int(year)) or year
     when = year if c["venue_type"] == "conference" or not month else f"{year}.{month}"
     return f"{clean_venue(venue)} {when}", url
+
+
+def conference_year(name, event="", published=None):
+    """The year the meeting took place, when its acronym or name gives one: "ICRA 2026", "(MLCCIM2025)",
+    "2026 IEEE/RSJ ...". Proceedings often come out the year after the meeting. Only a year from two years
+    before publication up to the publication year itself is trusted."""
+    for text in (event or "", name or ""):
+        for y in re.findall(r"(?<!\d)((?:19|20)\d{2})(?!\d)", text):
+            if published is None or published - 2 <= int(y) <= published:
+                return y
+    return None
 
 
 def short_venue(name, vtype, event=""):
@@ -1217,15 +1230,18 @@ def short_venue(name, vtype, event=""):
         return SHORT[name]
     # trust the record's type: journals called "Proceedings of the IEEE" are not conferences
     if vtype == "conference" or (not vtype and CONF_WORDS.search(name)):
+        # acronyms may start with a digit ("3M-NANO") but need a letter, so a bare "(2025)" is not one
         event = re.sub(r"[ '’]?\d{2,4}$", "", event or "")  # "ICRA 2026" -> "ICRA"
-        if re.fullmatch(r"[A-Za-z][A-Za-z&-]{1,11}", event):
+        if re.fullmatch(r"(?=.*[A-Za-z])[A-Za-z0-9][A-Za-z0-9&-]{1,11}", event):
             return event
         for pattern, short in CONFERENCES:
             if re.search(pattern, name, re.I):
                 return short
-        m = re.search(r"\(([A-Z][A-Za-z&-]{1,11})(?:[ '’]?\d{2,4})?\)", name)
-        if m:
-            return m.group(1)
+        acronyms = re.findall(r"\(((?=[A-Za-z0-9&-]*[A-Za-z])[A-Z0-9][A-Za-z0-9&-]{1,11}?)(?:[ '’]?\d{2,4})?\)", name)
+        if acronyms:
+            # a joint meeting, "... (CIS) and IEEE ... (RAM)", goes by both names: CIS-RAM
+            joint = len(acronyms) > 1 and re.search(r"\)\s+and\s+", name)
+            return "-".join(acronyms) if joint else acronyms[0]
         name = re.sub(r"^(?:\d{4} )?(?:Proceedings of (?:the )?)?", "", name)
     return re.sub(r"^The ", "", name)
 

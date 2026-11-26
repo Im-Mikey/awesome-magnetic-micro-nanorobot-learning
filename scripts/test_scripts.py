@@ -234,6 +234,22 @@ def checks(du, us, copy, check):
     check("format: make_line writes the awesome-lint style", du.make_line(c) ==
           "- [Deep RL for magnetic microrobots](https://doi.org/10.1109/LRA.2026.9) - IEEE RA-L 2026.03. "
           "[arXiv](https://arxiv.org/abs/2601.00001), [code](https://github.com/a/b) 🌟")
+    c = cand(title="RL for jellyfish millirobots", doi="10.1007/978-981-95-4897-2_44", venue_type="conference",
+             venue="Proceedings of the 4th International Conference on Machine Learning, Cloud Computing and "
+                   "Intelligent Mining (MLCCIM2025)", date="2026-06-03")
+    check("format: a conference takes the year of the meeting, not of the proceedings",
+          " - MLCCIM 2025." in (du.make_line(c) or ""))
+    c = cand(title="Robot paper", doi="10.1109/iros.2026.1", venue_type="conference", date="2026-09-01",
+             venue="2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)")
+    check("format: an IEEE conference keeps its own year", " - IROS 2026." in (du.make_line(c) or ""))
+    check("format: a joint meeting goes by both acronyms", du.short_venue(
+        "2026 IEEE International Conference on Cybernetics and Intelligent Systems (CIS) and IEEE International "
+        "Conference on Robotics, Automation and Mechatronics (RAM)", "conference") == "CIS-RAM")
+    check("format: an acronym may start with a digit", du.short_venue(
+        "2025 IEEE International Conference on Manipulation, Manufacturing and Measurement on the Nanoscale (3M-NANO)",
+        "conference") == "3M-NANO" and du.short_venue("Any name", "conference", "3M-NANO 2025") == "3M-NANO")
+    check("format: a year in brackets is not an acronym", du.short_venue(
+        "International Conference on Microrobots (2025)", "conference").startswith("International Conference"))
     check("code: a cited library without a cue is ignored",
           du.code_link("We train with stable-baselines3 (https://github.com/DLR-RM/stable-baselines3).") == "")
     check("code: 'code is available at' counts",
@@ -297,6 +313,9 @@ def checks(du, us, copy, check):
                           ("Deep Learning-based 3D Magnetic Microrobot Tracking", "dl"),
                           ("Bayesian optimisation of helical swimmer shape", "other")):
         check(f"method: '{title[:45]}' is {method}", us.classify_method(title) == method)
+    check("method: a GAN in the abstract is deep learning", us.classify_method(
+        "Sim-to-real image synthesis for microrobots", "We train a Laplacian-pyramid GAN.") == "dl")
+    check("method: 'organs' is not read as GAN", us.classify_method("Magnetic microrobots for organs") == "other")
 
 
 def main():

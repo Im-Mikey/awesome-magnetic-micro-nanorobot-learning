@@ -83,7 +83,8 @@ METHODS = (
               r"|from demonstrations?|(?:adaptive|approximate) dynamic programming|\breward")),
     ("dl", rx(r"deep (?:learning|neural|networks?|convolution\w*|energy)|neural (?:networks?|nets?|operators?|control)"
               r"|\bcnns?\b|convolutional|\byolo|u-?net\b|transformer|graph neural|\bgnns?\b|graph attention|\blstm"
-              r"|recurrent neural|autoencoder|diffusion (?:models?|polic\w*)|\bpinns?\b|physics-informed neural")),
+              r"|recurrent neural|autoencoder|diffusion (?:models?|polic\w*)|\bpinns?\b|physics-informed neural"
+              r"|\bgans?\b|generative adversarial")),
 )
 STACK = ("rl", "dl", "fm", "other")  # drawing and legend order, which is also colour slot order
 SHORT_LABEL = {"rl": "RL & imitation", "dl": "Deep learning", "fm": "Foundation models", "other": "Other ML"}
