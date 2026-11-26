@@ -103,3 +103,9 @@
 2026-11-25	exclude	doi:10.1109/iros61738.2026.11777580	MicroVLA: A Vision-Language-Action Framework for Microrobotic Navigation Considering Inter-Particle Micro-Force Fields
 2026-11-25	exclude	arxiv:2609.16256;doi:10.1109/iros61738.2026.11776422	Tendon-Driven Continuum Robot with Modular Stiffness and In-Situ Self Pose Estimation
 2026-11-25	upgrade	arxiv:2603.05448;doi:10.1109/iros61738.2026.11777596	Residual RL–MPC for Robust Microrobotic Cell Pushing Under Time-Varying Flow
+2026-11-26	include	doi:10.1039/d6sm00517a;pmid:42746889	Wall detection for a microswimmer in Stokesian flows by using hydrodynamic signals
+2026-11-26	maybe	doi:10.1016/j.cclet.2026.113704	Engineered E. coli Nissle 1917 as H2S intelligent microbots for precise NIR-II bioimaging and synergistic anticancer therapy
+2026-11-26	exclude	doi:10.5281/zenodo.24207292	The Universe as a Cascading Narrowing Generator and Filter: Mathematical Mechanics, Target-Free Verification, and the Evolution of Subjectivity (Edition 7.0)
+2026-11-26	include	doi:10.1109/iros61738.2026.11776219	Physics-Incorporated Sim-to-Real Image Synthesis for Pose and Depth Estimation of Microrobots
+2026-11-26	include	doi:10.1109/iros61738.2026.11776800	A Hierarchical Navigation Framework for Microrobot Swarms in Unknown Vascular Networks via Local Perception
+2026-11-26	maybe	doi:10.1109/iros61738.2026.11776410	ST-GRL: Spatiotemporal Cognitive Graph Reinforcement Learning for Scalable Multi-Robot Collaborative Exploration

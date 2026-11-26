@@ -6,7 +6,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 
 **Daily updates.** A [free bot](.github/workflows/daily-update.yml) searches arXiv, OpenAlex, Crossref, PubMed and Semantic Scholar every day. Between them these sources index journals and conferences from all major publishers, including IEEE, Springer Nature, Wiley, Elsevier, ACS, RSC and MDPI. Papers the bot is unsure about wait for review in [NEW_PAPERS.md](NEW_PAPERS.md). Keyword search still misses some papers, so suggestions are welcome.
 
-> 149 core papers + 76 related papers, 17 with open-source code (8%). Last updated: 2026-11-25.
+> 152 core papers + 76 related papers, 18 with open-source code (8%). Last updated: 2026-11-26.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/paper_growth_dark.svg">
@@ -25,7 +25,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 
 | Year      |    Core | Related | RL & imitation learning | Deep learning | Language & foundation models | Other ML & optimisation |
 | --------- | ------: | ------: | ----------------------: | ------------: | ---------------------------: | ----------------------: |
-| 2026*     |      59 |      16 |                      32 |            22 |                            5 |                      16 |
+| 2026*     |      62 |      16 |                      33 |            23 |                            5 |                      17 |
 | 2025      |      28 |      23 |                      24 |            16 |                            2 |                       9 |
 | 2024      |      24 |       7 |                       8 |            12 |                            0 |                      11 |
 | 2023      |      14 |       4 |                       7 |             7 |                            0 |                       4 |
@@ -35,7 +35,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 | 2019      |       2 |       3 |                       3 |             1 |                            0 |                       1 |
 | 2018      |       0 |       3 |                       0 |             2 |                            0 |                       1 |
 | 2017      |       0 |       3 |                       2 |             1 |                            0 |                       0 |
-| **Total** | **149** |  **76** |                  **90** |        **74** |                        **7** |                  **54** |
+| **Total** | **152** |  **76** |                  **91** |        **75** |                        **7** |                  **55** |
 
 \* 2026 counts run to November. Learning methods are assigned from titles and abstracts by keyword rules, so treat them as approximate.
 
@@ -49,9 +49,9 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [Control and Navigation](#control-and-navigation) (40)
 - [Locomotion and Gait Learning](#locomotion-and-gait-learning) (5)
 - [Manipulation and Cargo Delivery](#manipulation-and-cargo-delivery) (6)
-- [Swarms and Multi-Robot Control](#swarms-and-multi-robot-control) (17)
+- [Swarms and Multi-Robot Control](#swarms-and-multi-robot-control) (18)
 - [Path and Motion Planning](#path-and-motion-planning) (15)
-- [Perception: Detection, Tracking and Localization](#perception-detection-tracking-and-localization) (17)
+- [Perception: Detection, Tracking and Localization](#perception-detection-tracking-and-localization) (19)
 - [Modeling and System Identification](#modeling-and-system-identification) (9)
 - [Design and Fabrication](#design-and-fabrication) (8)
 - [Foundation Models and LLMs](#foundation-models-and-llms) (7)
@@ -163,6 +163,7 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [Evolutionary Automatic Guidance Scheme for Magnetic Nanoparticles in High-Flow Vascular Models Using a Uniform Magnetic Force Field](https://doi.org/10.1109/ICRA57385.2026.11696423) - ICRA 2026.
 - [Deep Neural Network-Based Control of Microswarms for Long-Term Locomotion](https://doi.org/10.1109/aim65483.2026.11658232) - AIM 2026.
 - [Deep Reinforcement Learning-Driven Nanobot Collectives for Micro-Thrombus Localization and Cardiovascular Flow Optimization](https://doi.org/10.1109/gseact68539.2026.11620180) - GSEACT 2026.
+- [A Hierarchical Navigation Framework for Microrobot Swarms in Unknown Vascular Networks via Local Perception](https://doi.org/10.1109/iros61738.2026.11776800) - IROS 2026.
 - [Collaborative Task Planning for PCB-Driven Magnetic Microrobots Using Deep Reinforcement Learning](https://doi.org/10.1109/TMECH.2025.3592930) - IEEE/ASME T-Mech 2025.08.
 - [Artificial Intelligence-Assisted Multimode Microrobot Swarm Behaviors](https://doi.org/10.1021/acsnano.4c16347) - ACS Nano 2025.03.
 - [Paired Interactions of Magnetic Millirobots in Confined Spaces Through Data-Driven Disturbance Rejection Control Under Global Input](https://doi.org/10.1109/TMECH.2024.3521085) - IEEE/ASME T-Mech 2025.01.
@@ -200,9 +201,11 @@ Pull requests for new papers and code are very welcome; see [Contributing](#cont
 - [On the Pose Estimation of an Untethered Microrobot via Magnetic Localization and Optical Tracking](https://doi.org/10.3390/mi17101196) - Micromachines 2026.10.
 - [Vision-Guided Closed-Loop Autonomous Navigation of Light-Driven Janus Microbots](https://arxiv.org/abs/2610.21222) - arXiv 2026.10.
 - [Selective Class-Aware Refinement (SCAR) Method for Microrobot Detection in Ultrasound Images](https://doi.org/10.3390/s26185798) - Sensors 2026.09.
+- [Wall detection for a microswimmer in Stokesian flows by using hydrodynamic signals](https://doi.org/10.1039/d6sm00517a) - Soft Matter 2026.09.
 - [Machine-intelligent multimodal algebot for intracavitary chemotherapy](https://doi.org/10.1038/s41565-026-02195-0) - Nature Nanotechnology 2026.06.
 - [Non-vision-based localization and feedback control of untethered magnetic microrobots with hall-effect magnetic sensors under actuation field interference](https://doi.org/10.1016/j.sna.2026.117688) - Sensors and Actuators A 2026.03.
 - [Synthetic X-ray-driven tracking and control of miniature medical devices](https://doi.org/10.1038/s42256-026-01190-3) - Nature Machine Intelligence 2026.02.
+- [Physics-Incorporated Sim-to-Real Image Synthesis for Pose and Depth Estimation of Microrobots](https://doi.org/10.1109/iros61738.2026.11776219) - IROS 2026. [code](https://github.com/QiangLiuSJTU/microrobot-sim2real) 🌟
 - [Influence of hyperparameters on the performance of deep learning-based microrobotic localization under phantom tissue](https://doi.org/10.1101/2025.08.13.670026) - bioRxiv 2025.08.
 - [Synthetic Data-Assisted Miniature Medical Robot Navigation via Ultrasound Imaging](https://doi.org/10.1109/TMECH.2025.3583020) - IEEE/ASME T-Mech 2025.07.
 - [Autonomous Navigation of Magnetic Nanorobot Swarm via NIR-II Imaging](https://doi.org/10.1109/3M-NANO65639.2025.11261214) - 3M-NANO 2025.
