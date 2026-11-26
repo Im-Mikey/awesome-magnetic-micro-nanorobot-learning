@@ -100,6 +100,6 @@
 2026-11-24	exclude	doi:10.1021/acssensors.6c03254	Metal–Organic-Framework-Encoded Magnetic Soft Robot for Untethered Multimodal Hazard Mapping and Autonomous Source Localization in Confined Spaces
 2026-11-24	upgrade	doi:10.1109/iros61738.2026.11777022	Robust Autonomous Control of a Magnetic Millirobot in In Vitro Cardiac Flow
 2026-11-25	exclude	doi:10.3390/math14234310	Entropy-Adaptive Exponent Scheduling for Sequence-Level Power Sampling: Training-Free Reasoning in Large Language Models
-2026-11-25	maybe	doi:10.1109/iros61738.2026.11777580	MicroVLA: A Vision-Language-Action Framework for Microrobotic Navigation Considering Inter-Particle Micro-Force Fields
+2026-11-25	exclude	doi:10.1109/iros61738.2026.11777580	MicroVLA: A Vision-Language-Action Framework for Microrobotic Navigation Considering Inter-Particle Micro-Force Fields
 2026-11-25	exclude	arxiv:2609.16256;doi:10.1109/iros61738.2026.11776422	Tendon-Driven Continuum Robot with Modular Stiffness and In-Situ Self Pose Estimation
 2026-11-25	upgrade	arxiv:2603.05448;doi:10.1109/iros61738.2026.11777596	Residual RL–MPC for Robust Microrobotic Cell Pushing Under Time-Varying Flow

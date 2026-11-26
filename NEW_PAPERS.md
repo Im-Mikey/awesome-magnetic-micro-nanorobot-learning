@@ -7,7 +7,4 @@ Candidates that the [daily update](.github/workflows/daily-update.yml) found but
 
 Either way the paper will not come back, because every paper the bot has looked at is logged in [scripts/processed_ids.txt](scripts/processed_ids.txt).
 
-### Foundation Models and LLMs
-
-- [MicroVLA: A Vision-Language-Action Framework for Microrobotic Navigation Considering Inter-Particle Micro-Force Fields](https://doi.org/10.1109/iros61738.2026.11777580) - IROS 2026.
-  - Found 2026-11-25 in OpenAlex. Suggested: Foundation Models and LLMs. Why: Magnetic actuation not specified; unclear if scope applies (openai/gpt-oss-120b via api.groq.com)
+*Nothing is waiting for review right now.*
