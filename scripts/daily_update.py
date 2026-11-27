@@ -1473,7 +1473,9 @@ def commit_message(done):
         parts.append(f"update {len(done['upgraded'])} to the published version")
     if done["queued"]:
         parts.append(f"queue {len(done['queued'])} for review")
-    head = (", ".join(parts) or "record reviewed candidates") + f" ({TODAY})"
+    # papers that were only rejected still change the log; with none at all only the "last checked" badge moves
+    head = (", ".join(parts) or ("record reviewed candidates" if done["rejected"] else "daily check, nothing new")
+            ) + f" ({TODAY})"
     body = [f"- {kind}: {c['title']}" for kind, key in (("Added", "added"), ("Updated", "upgraded"),
                                                          ("Queued", "queued")) for c in done[key]]
     return head[0].upper() + head[1:] + ("\n\n" + "\n".join(body) if body else "") + "\n"
@@ -1582,6 +1584,8 @@ def main(argv=None):
             else json.loads(pathlib.Path(a.input).read_text("utf-8")))
     data.setdefault("notes", NOTES)
     done = insert(data, dry_run=a.dry_run)
+    if a.cmd == "run" and not a.dry_run:
+        load_update_stats().write_checked_badge(TODAY)  # shows that the search ran, even with nothing new
     text = report(data, done)
     print(text)
     if a.summary:

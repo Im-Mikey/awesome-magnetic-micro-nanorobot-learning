@@ -61,7 +61,7 @@ This is the style [awesome-lint](https://github.com/sindresorhus/awesome-lint) c
 
 ## For maintainers
 
-After adding entries by hand, refresh the paper counts, the numbers in Contents, the two charts, the numbers table and the date on the "last updated" badge:
+After adding entries by hand, refresh the paper counts, the numbers in Contents, the two charts and the numbers table:
 
 ```bash
 python scripts/update_stats.py
@@ -92,6 +92,8 @@ python scripts/test_scripts.py
    - is not dated in the future.
 
    If the check fails, the run stops without committing. Otherwise every judged paper is logged in [`scripts/processed_ids.txt`](scripts/processed_ids.txt) and the result is pushed.
+
+Every run also moves the date on the "last checked" badge next to the title. So the README shows that the bot is still running on days with nothing new, which end in a small commit called "Daily check, nothing new". The "Last updated" line under the title shows when the list itself last changed.
 
 It costs nothing. GitHub Actions is free for public repositories, and every data source is free.
 

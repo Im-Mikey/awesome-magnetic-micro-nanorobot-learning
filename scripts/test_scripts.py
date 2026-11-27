@@ -288,23 +288,47 @@ def checks(du, us, copy, check):
     check("model include: a loose keyword match still waits for review", loose["decision"] == "maybe")
     check("model include: a strict keyword match goes straight in", strict["decision"] == "include")
 
-    # --- adding a paper records its learning method and redraws the charts and the date badge
-    badge_file = copy / "assets" / "last_updated.svg"
-    badge_file.write_text("stale", encoding="utf-8")
+    # --- adding a paper records its learning method and redraws the charts
     done = du.insert({"candidates": [dict(strict, section="Control and Navigation")]})
     text = du.README.read_text(encoding="utf-8")
     tags = json.loads(methods_file.read_text(encoding="utf-8"))
     check("insert: the learning-method tag is recorded", len(done["added"]) == 1 and tags.get("arxiv:2611.22222") == "rl")
     check("insert: charts and numbers table are redrawn", (copy / "assets" / "learning_methods.svg").exists()
           and "| **Total** |" in text)
-    stats_date = re.search(r"Last updated: (\d{4}-\d{2}-\d{2})\.", text)
-    badge = badge_file.read_text(encoding="utf-8")
-    check("insert: the 'last updated' badge is redrawn with the date of the stats line", bool(stats_date)
-          and f"<title>last updated: {stats_date.group(1)}</title>" in badge and is_svg(badge))
     check("badges: every image in the title that lives in the repo is a valid SVG", all(
         is_svg((copy / src).read_text(encoding="utf-8")) for src in re.findall(r"!\[[^\]]*\]\((assets/[^)]+)\)",
                                                                                 text.split("\n", 1)[0])))
     check("insert: README is still consistent", du.check_readme() == [])
+    reset()
+
+    # --- a quiet day: nothing new, yet the badge and the commit message show that the search ran
+    badge_file = copy / "assets" / "last_checked.svg"
+    badge_file.write_text("stale", encoding="utf-8")
+    msg, summary = copy / "commit.txt", copy / "summary.md"
+    before = {p: p.read_text(encoding="utf-8") for p in (du.README, du.QUEUE, du.PROCESSED)}
+    real_fetch, real_from_env = du.fetch, du.LLM.__dict__["from_env"]
+    du.fetch = lambda days, broad=False: {"date": du.TODAY.isoformat(), "days": days, "broad_filter": broad,
+                                          "sources": {"test": "0 (0s)"}, "papers_seen": 0, "candidates": [],
+                                          "notes": []}
+    du.LLM.from_env = staticmethod(lambda: None)
+    try:
+        du.main(["run", "--dry-run", "--commit-msg", str(msg)])
+        check("quiet day: a dry run changes nothing, not even the badge",
+              badge_file.read_text(encoding="utf-8") == "stale" and not msg.exists())
+        du.main(["run", "--summary", str(summary), "--commit-msg", str(msg)])
+    finally:
+        du.fetch, du.LLM.from_env = real_fetch, real_from_env
+    badge = badge_file.read_text(encoding="utf-8")
+    check("quiet day: the 'last checked' badge shows today",
+          f"<title>last checked: {du.TODAY:%Y-%m-%d}</title>" in badge and is_svg(badge))
+    check("quiet day: the commit message says nothing was new",
+          msg.read_text(encoding="utf-8") == f"Daily check, nothing new ({du.TODAY})\n")
+    check("quiet day: the list, the queue and the log stay as they were",
+          all(p.read_text(encoding="utf-8") == t for p, t in before.items())
+          and "Nothing new today." in summary.read_text(encoding="utf-8"))
+    check("rejected papers only: the commit message says the candidates were recorded",
+          du.commit_message({"added": [], "upgraded": [], "queued": [], "rejected": [cand(title="x")], "later": []})
+          == f"Record reviewed candidates ({du.TODAY})\n")
     reset()
 
     # --- learning-method classifier

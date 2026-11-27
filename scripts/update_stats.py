@@ -7,13 +7,14 @@ Run from the repository root after adding papers:
 It counts every list entry in README.md (lines such as "- [Title](link) - Venue YYYY.MM. ...",
 with 🌟 at the end when the code is public), splits them into core sections and "Related:" sections, then rewrites:
 - the "> N core papers + ..." line and the per-section counts in Contents;
-- assets/last_updated.svg, the date badge next to the title;
 - assets/paper_growth*.svg, papers per year;
 - assets/learning_methods*.svg, papers per year by learning method;
 - the table between the <!-- stats-table:start --> and <!-- stats-table:end --> markers.
 
 Learning methods come from assets/methods.json, which the daily update fills in from titles and
 abstracts. A paper with no entry there is classified from its title alone.
+The "last checked" badge (assets/last_checked.svg) is not touched here: the daily update redraws it on
+every run with write_checked_badge().
 Only the Python standard library is needed.
 """
 import datetime
@@ -33,12 +34,12 @@ ENTRY = re.compile(r"^- \[[^\]]+\]\(\S+?\) - .+? (\d{4})(?:\.\d{2})?\.( .*)?$")
 STATS = re.compile(r"^> \d+ core papers \+ \d+ related papers, \d+ with open-source code(?: \(\d+%\))?\. "
                    r"Last updated: .*$")
 TOC = re.compile(r"^(?P<head>- \[(?P<name>[^\]]+)\]\(#[^)]+\) )\(\d+\)$")
-# The "last updated" badge next to the title, in the flat shields.io style (shields.io is CC0). It is
+# The "last checked" badge next to the title, in the flat shields.io style (shields.io is CC0). It is
 # drawn here and kept in assets/ because GitHub's image proxy often fails to fetch new images from
 # badge services. Verdana digits all have the same width, so every date fits this layout.
-UPDATED_BADGE = (
-    '<svg xmlns="http://www.w3.org/2000/svg" width="154" height="20" role="img" aria-label="last updated: {date}">'
-    '<title>last updated: {date}</title><filter id="blur"><feGaussianBlur stdDeviation="16"/></filter>'
+CHECKED_BADGE = (
+    '<svg xmlns="http://www.w3.org/2000/svg" width="154" height="20" role="img" aria-label="last checked: {date}">'
+    '<title>last checked: {date}</title><filter id="blur"><feGaussianBlur stdDeviation="16"/></filter>'
     '<linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/>'
     '<stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="r">'
     '<rect width="154" height="20" rx="3"/></clipPath><g clip-path="url(#r)">'
@@ -47,9 +48,9 @@ UPDATED_BADGE = (
     '<g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" '
     'text-rendering="geometricPrecision" font-size="110">'
     '<g transform="scale(.1)"><g aria-hidden="true" fill="#010101">'
-    '<text x="405" y="150" fill-opacity=".8" filter="url(#blur)" textLength="690">last updated</text>'
-    '<text x="405" y="150" fill-opacity=".3" textLength="690">last updated</text></g>'
-    '<text x="405" y="140" textLength="690">last updated</text></g><g transform="scale(.1)">'
+    '<text x="405" y="150" fill-opacity=".8" filter="url(#blur)" textLength="690">last checked</text>'
+    '<text x="405" y="150" fill-opacity=".3" textLength="690">last checked</text></g>'
+    '<text x="405" y="140" textLength="690">last checked</text></g><g transform="scale(.1)">'
     '<g aria-hidden="true" fill="#010101">'
     '<text x="1155" y="150" fill-opacity=".8" filter="url(#blur)" textLength="650">{date}</text>'
     '<text x="1155" y="150" fill-opacity=".3" textLength="650">{date}</text></g>'
@@ -277,6 +278,14 @@ def stats_table(core, rel, by_method, years, note):
     return [""] + head + rows + [total, "", foot, ""]
 
 
+def write_checked_badge(day):
+    """Redraw assets/last_checked.svg with the day of the last search for new papers. The daily update calls
+    this on every run, also when it finds nothing new, so the README shows that the bot is still running."""
+    ASSETS.mkdir(exist_ok=True)
+    (ASSETS / "last_checked.svg").write_text(CHECKED_BADGE.replace("{date}", f"{day:%Y-%m-%d}"),
+                                             encoding="utf-8", newline="\n")
+
+
 def main():
     lines = README.read_text(encoding="utf-8").splitlines()
     core, rel, by_method, n_code = parse(lines, load_methods())
@@ -298,8 +307,6 @@ def main():
             footnote="Methods are assigned from titles and abstracts by keyword rules, so counts are approximate.",
             right=150, direct_labels=True)
         (ASSETS / f"learning_methods{suffix}.svg").write_text(methods, encoding="utf-8", newline="\n")
-    (ASSETS / "last_updated.svg").write_text(UPDATED_BADGE.replace("{date}", f"{today:%Y-%m-%d}"),
-                                             encoding="utf-8", newline="\n")
 
     total = sum(core.values()) + sum(rel.values())
     stats = (f"> {sum(core.values())} core papers + {sum(rel.values())} related papers, {n_code} with "
